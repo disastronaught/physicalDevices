@@ -17,7 +17,8 @@ For the final setup for the touchscreen, I searched the internet for previous bu
 https://github.com/tianoujian. This guy wrote up some excellent boot scripts and made major contributions to the functionality of my
 current build. There's even custom directories for the precise models of screen. I ran these commands in the pi terminal
 
-#MZP351HV00BR
+>cd ~/
+>git clone https://github.com/tianyoujian/MZDPI.git
 >cd MZDPI/mzp351hv00br
 >sudo chmod +x ./mzdpi-hvga-autoinstall
 >sudo ./mzdpi-hvga-autoinstall
