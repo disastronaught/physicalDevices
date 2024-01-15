@@ -1,1 +1,26 @@
+Starting out with a Raspberry Pi Zero W and a Uniker MZP351HV00BR 2.8inch touchscreen, a soldering iron, solder, flux pen, and 512GB microSD
 
+I wetted the pins on the screen to ensure proper flow out of solder, set the gun to 860F and while it heated, mounted the two components 
+together with the heat sink from the CPU facing me, and the memory card slot closest to the dampener on the touchscreen.
+
+For these GPIO solder jobs, I like to use a narrow chisel tip with no angular properties. This allows me to stand the iron up perpendicular
+from the boart and make sidelong contact with the GPIO pin while the tip rests on the trace ring. This partially avoids heating other pins
+while attempting to solder something next door. Pressing too firmly while soldering can really damage components and traces, but no one 
+ever tells you just how much pressure to place. Ideally, you'd let the weight of the tool do the job. This may increase by a few grams from
+the pressure it takes to hold the iron upright.
+
+Once the soldering is complete, I flashed a micro SD with the available raspios(formerly Raspbian) to insert before I started up.
+I did use the micro-HDMI to set up the OS before I switched over the screen selection to GPIO. I had a little fish-finder screen that 
+took a 9VDC power supply and HDMI input. the following CMDlets were run in the terminal to configure the TFT's drivers and setup:
+
+For the final setup for the touchscreen, I searched the internet for previous builds who had used this screed and pi, they all pointed to 
+https://github.com/tianoujian. This guy wrote up some excellent boot scripts and made major contributions to the functionality of my
+current build. There's even custom directories for the precise models of screen. I ran these commands in the pi terminal
+
+#MZP351HV00BR
+>cd MZDPI/mzp351hv00br
+>sudo chmod +x ./mzdpi-hvga-autoinstall
+>sudo ./mzdpi-hvga-autoinstall
+>sudo reboot
+
+After running these the board reboots and the touchscreen is fully functional.
