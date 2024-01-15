@@ -1,0 +1,60 @@
+**TLDR: Enable USB Boot on Lenovo Ideapad to bypass bootlocker by editing binary permissions in boot directory.
+
+--In 2016 I bought a Lenovo Ideapad 100S to store word documents on and experiment with by breaking it open to add memory/GPU.
+--Fast forward to 2024 and I'm pulling this thing out of a box to tinker with for the first time.
+
+--So the process here would seem fairly straighforward right? Flash a thumb drive with whatever flavor of Ubuntu you'd like
+--and select "boot from EFI/USB"? Nope, and the further you go down the Lenovo rabbit hole, the more lucky rabbit's feet you'll find in 
+--your pockets. This was a dumb one, but in a way it way worth learning why you should just stick with Asus/Acer/MSI when it comes to 
+--altering off the shelf devices.
+
+--Learning about Lenovo and their Silly Parlor Tricks
+
+--If you're not familiar with bloatware or bootblockers, I'll write in enough peripheral statements to introduce you to what sort
+--of shadiness goes on in the tech world by means of production. So you buy a $500 police auction Crown Vic right? and you want
+--to paint it say... blue? Only when you go to paint it, the coating slides off and refuses to bond to the metal.. this is bootblocker 
+--software. Lenovo, in all their wisdom, configured several stages of blocking operating systems other than specific Windows distros.
+Why?
+--Why would a Chinese tech giant produce several models of laptop to be sold that could only load Windows 8 and 10 in specific configurations?
+--More on that in a minute, but for reference here's an article detailing some dealings with Lenovo being called out by the user
+--community for their use of RAID mode on a single SSD driven platform: 
+https://www.bit-tech.net/news/tech/laptops/lenovo-os-blocking-bios-lock/1/
+
+--The second portion of this deals with Lenovo planting some browser hijacking malware on their systems to push steered ads to users.
+--tomsguide.com posted not only one awesome writeup on this but an an additional artical on Lenovo's use of boot blocking LSE tool
+--or the Lenovo Service Engine. Both resulted in CVE's rated Severe in their threat index. They can be found here:
+https://www.tomsguide.com/us/lenovo-superfish-removal-tool,news-20486.html
+https://www.tomsguide.com/us/how-to-lenovo-bootkit-removal,news-21456.html
+
+--In my case, I needed to find a way to make the full BIOS menu selectable.
+--You're probably thinking, why not just F2 the box and turn secure boot off.. this flat out doesn't fix anything. USB options are
+--still unavailable for boot access.
+--"But what about the Nova button and the troubleshooter?" Also, arrow keys are not enabled for use and you won't be able to select
+--your removable media as a boot device. The BIOS at this point only has three tabs "Information, Configuration, and Exit" instead of the 
+--traditional five or six that are normally extremely editable in a BIOS menu.
+
+--So, instead of going down in the stack and working with the BIOS, I needed to edit some code in the boot scripts on the user end.
+--Once logged in, I endered the c:/boot drive and directory and started examining the configuration files for options written into
+--the binaries. Well... realistically, I deleted Fishook.exe first because it seemed eerily reminiscient of the superfish tool 
+--which was previously located in the same exact location. 
+--Once I decided to open these from the terminal with >notepad <filename.bin> I started scrolling.. and scroll I did.
+--There's about 10k lines of gobbledegook to sift through given that most of these files would require an app which isn't currently 
+--installed (and who wants to do that). I'm not going to load up VScode on an 8 year old machine just to edit these more prettily.
+--As portions of the menus and code itsself are loaded in plain text about 1/3 of the way into the code, I was able to find a portion
+--which had options for configuration. These included binary selections of modes '1' or '0' for enabling or disabling boot methods, 
+--sub-menus and other functionality. I probably went overboard with the enabling, but in all, it was only about 5 single digit characters
+--which I changed from a '0' to a '1' to enable the BIOS arrow keys in the troubleshoot menu and unlock booting from removeable media.
+--After this, it was only a matter of pressing the Nova button, selecting Troubleshoot, and then Boot From USB, and Kali Linux was up 
+--and running. 
+
+
+
+
+
+
+
+
+
+
+
+
