@@ -1,0 +1,37 @@
+TLDR: Create a live feed night vision setup on Raspberry Pi Zero with 2.8"TFT and $21 IR camera.
+raspivid -hf -vf -fps 30 -o - -t 0 | cvlc -vvv stream:///dev/stdin --sout '#rtp{sdp=rtsp://:8554/}' :demux=h264
+(run it twice)
+
+
+
+//the following are command strings I ran on the rapios loaded pi zero w with Uniker 2.8inch TFT touchscreen enabled
+>raspivid -hf -vf -fps 30 -o - | mplayer -fps 30 -cache 1024 -
+//ok so that last one sent the feed to the TFT screen, but it dies after around 3 seconds which means there's
+//a problem with the color space conversion when piping the video stream from raspivid to mplayer. Now I have to specify the pixel
+//format for the output of raspivid and adjust the commands I present to the mplayer service.
+>raspivid -hf -vf -fps 30 -o - -pix_fmt yuv420p | mplayer -fps 30 -cache 1024 -demuxer rawvideo -rawvideo w=1920:h=1080:format=I420 -
+//that doesn't work either... let's try to use simplified commands because raw video format is breaking the streaming capability of the pi
+>raspivid -hf -vf -fps 30 -o - -t 0 | mplayer -fps 30 -cache 1024 -demuxer h264es -
+//normally that last one would run a live feed, but it crashes in still frame mode and prints the mplayer man pages
+//I'm gonna try running omxplayer and see if it works smoother with raspberry pi hardware.
+>sudo apt-get update
+>sudo apt-get install omxplayer
+//well that package is obsolete... let's go add the raspberrypi.org repository and get it running
+sudo echo "deb http://archive.raspberrypi.org/debian/ buster main" >> /etc/apt/sources.list
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 82B129927FA3303E
+//then we can do a little update and reinstall
+>sudo apt-get update
+>sudo apt-get install omxplayer
+>raspivid -hf -vf -fps 30 -o - -t 0 | omxplayer --live -
+//ooooo a permissions error (haven't seen one of those in a while). Let's use an outdated keygen server to rerun that successfully
+>sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 82B129927FA3303E
+//then we update again to save the repository upgrade
+>sudo apt-get update
+//and that didn't work either.. 
+//fine fine raspberry pi. I'll go back and do what I should've done from the beginning and just run VLC
+(it's already installed on the piOS)
+raspivid -hf -vf -fps 30 -o - -t 0 | cvlc -vvv stream:///dev/stdin --sout '#rtp{sdp=rtsp://:8554/}' :demux=h264
+//I had to run that last one twice to delete and reformat the media libraries and the stream runs until I hit Ctl+C on the keypad.
+
+
+
