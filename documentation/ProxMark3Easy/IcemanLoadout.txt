@@ -1,0 +1,16 @@
+This is a neat one. It's back in the realm of physical security and signal analysis. 
+After seeing the flipper pop up everywhere and thinking "I should build one of those from the ground up"
+I decided to get a lower level dev kit where you could see and interact with the hardware a little more.
+Also the different ranges allow for more customized bands in the capture range.
+
+I bought a Proxmark3Easy which at the time was a nicely discounted $41 on Amazon. This is the "512" model
+so it's compatible with Iceman's code written specifically for Proxmark devices.
+For the startup and trial uses, I'm borrowing methodology from DangerousThings.com
+He does an excellent unboxing and full startup tutorial here: https://www.youtube.com/watch?v=o6WOTM4D970
+Also if you're a text based learner (like me) he has a 10 page or so writeup here: https://dngr.us/pm3-guide
+All tests done with this device as recorded here are for educational purposes.
+All physical penetration testing and security audits performed with this device are under Master Service Agreements
+and their nature/success is covered by Non Disclosure Agreements.
+Please use this knowledge legally. I am not responsible for illegal use of near field communication devices
+developed with the techniques listed here. Sniff responsibly.
+
