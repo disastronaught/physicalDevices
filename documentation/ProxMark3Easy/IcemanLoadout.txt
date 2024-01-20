@@ -35,7 +35,7 @@ Loading an IDE for the pm3
   More on the DOS bit. I emulate retro games quite a bit (exclusively, I don't play anything newer than 1997). 
   So my machine attempted to load this into ScummVM (where I run a claymation game). Open this in file explorer, 
   because it may latch to emulation software if you have anything ancient running on your OS. I did as I was told
-  and loaded it into a folder titled "working" so the pointers would recognize the DOS8.3 labelling scheme.
+  and loaded it into a folder titled "c:/working" so the pointers would recognize the DOS8.3 labelling scheme.
 
   
 
