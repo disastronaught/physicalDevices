@@ -14,3 +14,36 @@ and their nature/success is covered by Non Disclosure Agreements.
 Please use this knowledge legally. I am not responsible for illegal use of near field communication devices
 developed with the techniques listed here. Sniff responsibly.
 
+Communicating with the pm3 over USB and ensuring smooth delivery of binaries/drivers
+  The first time I plugged this in, I honestly didn't know what to expect. With microcontrollers, chipsets and longworks modules
+  you're usually in C or Assembly, developing IO relational functions for use with peripheral attachments.
+  Or in the case of Arduino you're basically coding in C++ for a flash script to loop or run one iteration.
+  Apparently the pm3 is a little less friendly, and it's imperative to flow through the BUSID or COM port identification to ensure 
+  you're device is seen and communicating as intended.
+  This is as simple as searching "Device Manager" in the Windows search bar and selecting the "Ports" drop down menu.
+  If you see COM6, this is a good sign and the device is recognized.
+
+Loading an IDE for the pm3
+  As you can imaging, and DT.com mentions in his tutorials, the Git for proxspace is sort of convoluted to most windows users.
+  Whereas on Linux we'd likely follow a few apt-get or pip install commands, with Windows systems, we're downloading packages and 
+  running them with the intent that they compile and follow the paths that are set by default.
+  ***as noted proxspace (our development environment for interacting with the pm3) uses a directory structure based on 
+  Disc Operating System(DOS) where certain keystrokes throw errors, such as spaces and speacial characters in directory names.
+
+  To save the time most will spend searching the github for proxspace, just go here: 
+  https://github.com/Gator96100/ProxSpace/releases/tag/v3.11 and scroll to the bottom of the page for proxspace.7z.
+  More on the DOS bit. I emulate retro games quite a bit (exclusively, I don't play anything newer than 1997). 
+  So my machine attempted to load this into ScummVM (where I run a claymation game). Open this in file explorer, 
+  because it may latch to emulation software if you have anything ancient running on your OS. I did as I was told
+  and loaded it into a folder titled "working" so the pointers would recognize the DOS8.3 labelling scheme.
+
+  
+
+
+
+
+
+
+
+
+
