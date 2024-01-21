@@ -37,7 +37,38 @@ Loading an IDE for the pm3
   because it may latch to emulation software if you have anything ancient running on your OS. I did as I was told
   and loaded it into a folder titled "c:/working" so the pointers would recognize the DOS8.3 labelling scheme.
 
-  
+  I ran the runme64 batch file, which pulled down quite a large ammount of supplemental files for later use.
+  Instead of waiting for it to populate into the terminal, I ran this from a powershell window by just sending run[tab] and [enter]
+
+Updating
+  I ran this straight from dangerous things setup help page: git clone https://github.com/RfidResearchGroup/proxmark3.git
+  This takes a considerable amount of time. After this I changed to the directory where the firmware is: cd proxmark3/
+  cp Makefile.platform.sample Makefile.platform
+  notepad Makefile.platform
+  once in the notepad, I commented out what DangerousThings suggested and enabled a few more features by removing the '#' from
+  some flash addons such as bluetooth. I have an air tag, and want to see if it can be analyzed using the pm3.
+
+Booting into the pm3 terminal
+  ./pm3-flash-fullimage (I had run the ./pm3-flash-bootrom and gotten an error so I ran this one 
+  My problem was with the device now being recognized as a USB device so I fixed this by
+  Unplugging the Proxmark and holding the bootselect button when I plugged it back in.
+  This continuid the loadout and when I sent
+  pm3
+  it loaded into the pm3 terminal with no issues.
+
+Capture Configurations
+  This is the learning curve. I didn't have a loaded keycard on hand, however... I did have a Fengbros UV-5X3 
+  which is basically a full band Baofeng
+  To test the functionality, I want to crank the radio on, and tune it to a VHF freq, and see if the Proxmark alerts and captures 
+  during an active broadcast (keying the mic).
+  And The scan range on LF channels has a floor of 134KHz, so that's not happening unless I fire up the SDR.
+  However, I shined a light through all of the sample key cards that came with the Proxmark and this model came with three
+  HF and one LF card. 
+  The command:
+  lf search
+  works to identify the tag and displays which type of transmission is configured.
+
+Now that the loadout is done, and testing is functional, we need a screen and maybe a selection button....
 
 
 
