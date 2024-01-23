@@ -101,7 +101,11 @@ Hopefully editing the kernel will allow us to use the correct architecture betwe
   throws a cross_compile dependancy error. Well, let's go get some cross-compilation software
   >sudo apt-get install gcc-arm-linux-gnueabi
 
-
+So this level of troubleshooting is nothing short of rebuilding parts of the kernel, let's try to move down the wire.
+  First we're going to try some trick out of the holster like using another flash package to burn the OS onto the SD card
+  For this we'll use Etcher instead of Rufus. I'm also not going to unzip the download. Also, so it's more likely to boot
+  from the correct location, we'll use a more commonplace OS like Ubuntu. Once we develop a process for successful boot,
+  I'll take small steps back into the realm of QubesOS. Who knows, it might be a reason to get an upgraded SBC.
 
 
 
