@@ -107,6 +107,27 @@ So this level of troubleshooting is nothing short of rebuilding parts of the ker
   from the correct location, we'll use a more commonplace OS like Ubuntu. Once we develop a process for successful boot,
   I'll take small steps back into the realm of QubesOS. Who knows, it might be a reason to get an upgraded SBC.
 
+Success!
+  Ubuntu Jammy and Bionic start up just fine when pulled from the official OrangePi downloads page for 3LTS. I used Balena Etcher
+  instead of Rufus, though I'm sure Rufus would work just fine. The bionic desktop looks a little bleak and app availability is quite 
+  starving considering this is likely an ultralight distro. Jammy looks about the same, just a little more robust. Let's work on
+  dual booting this system with Jammy and Qubes on the microSD.
 
+Dual boot Jammy/Qubes
+  [Win+x]
+  Select "Disk Management"
+  Now in the bottom panel I can see both partitions, the first being my operating system and the second being the 64GB SD card.
+  lets shrink that Jammy partition down to a minimal (or close to it) size to leave our QubesOS the bulk of the memory.
+  RC > selecting "shrink volume"
+  ...we're going to go ahead and use Paragon Partitioning Manager to deal with this since Windows likes to write protect everything.
+  ***Most partitioning management tools come with hidden fees but paragon is free and works on write protected devices
+  I resized the partition with Jammy on it to 9.5GB (sounds like a cool number). And added an additional partition of around 49GB.
+  Then I copied the QubesOS image from my downloads into the SD cards new NTFS partition in the file manager.
+
+
+  
+  
+  
+  
 
 
