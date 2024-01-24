@@ -123,6 +123,16 @@ Dual boot Jammy/Qubes
   ***Most partitioning management tools come with hidden fees but paragon is free and works on write protected devices
   I resized the partition with Jammy on it to 9.5GB (sounds like a cool number). And added an additional partition of around 49GB.
   Then I copied the QubesOS image from my downloads into the SD cards new NTFS partition in the file manager.
+  ***Even after updating the active status of the new partition with Paragon, the OrangePi wouldn't boot using Qubes.
+
+Clean Aproach with WSL
+  So the first time this was tried, I attempted to load up U-boot, slap the defconfig file on top of Qubes on the SD, and boot it.
+  This didn't work, in large part, because I didn't understand how to use u-boot correctly. I think the best way to go about this is to
+  flash the orangepi_defconfig as a standalone, boot the orangepi, then change it's grub file to select the Qubes partition.
+  I'd run into some problems with u-boot not compiling the defconfig file correctly due to architecture issues. 
+  sudo apt-get install gcc-aarch64-linux-gnu
+  This should take care of that by loading up ARM8 tools.
+  
 
 
   
