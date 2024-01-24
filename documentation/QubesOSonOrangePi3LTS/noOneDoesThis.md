@@ -132,8 +132,21 @@ Clean Aproach with WSL
   I'd run into some problems with u-boot not compiling the defconfig file correctly due to architecture issues. 
   sudo apt-get install gcc-aarch64-linux-gnu
   This should take care of that by loading up ARM8 tools.
-  
+  Before I run 'make' again I need to set the Cross-Compiler environment variable so it points to the installed cross-compiler:
+  export CROSS_COMPILE=aarch64-linux-gnu-
+  ...less errors, but still too many warnings to proceed. This is where I'll start referencing the README.sunxi file located in
+  /u-boot/board/sunxi
+  This will guide us through some installs for readying our build on an Allwinner chip.
 
+From the README.sunxi file:
+  cd /src/arm-trusted-firmware
+  make PLAT=sun50i_a64 DEBUG=1 bl31
+  cd /src/crust
+  make orangepi_3_defconfig && make -j5 scp
+  ***dd if=u-boot-sunxi-with-spl.bin of=/dev/sdb bs=8k seek=1 (make sure "sdb" corresponds to the microSD you're using)
+  I'm getting a "text file busy" error while sending the 'dd' command, nothing's open, so it's likely a mounting issue.
+  
+  
 
   
   
