@@ -3,6 +3,12 @@
 //It just looked like a typical LED with 4 leads instead of two.
 //I could tell it wasn't a transistor because it had an epoxy cap and the same inner structure as other LEDS.
 
+//This is also an exercise in pulse width modulation by altering the intensity sent over the GPIO by using analogWrite with 
+//stated intensity.
+//using byte sized combinations of red green and blue, we can create purple and yellow hues as well as variable intensity bursts.
+//It's a simple enough concept, but the use of an RGB diode can save space on a board and act as a useful indicator 
+//when we use methods as input in larger scripts.
+
 #include "Arduino.h"
 
 
