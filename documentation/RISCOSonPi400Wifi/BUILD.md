@@ -22,10 +22,16 @@ someone in the past 35 years has to have solved this for us...
 Introducing the ethernet-to-usb-bridge. Vonets VAP11N300 was $25USD on Amazon and covers us with 2.4GHz wifi which is enough for us in this case.
 There's also the Vonets VAP11AC which is dual band and a possible extension for future use when I delve into hardening the security on this thing.
 
-To configure the Vonets VAP11N300, I needed to do so on the Vonets official website; what I didn't want to do was enter my home internet router's 
-password and SSID into a Chinese http website... If the implication isn't clear, I can't help you.
+To configure the Vonets VAP11N300, I needed to do so on the Vonets official website; Since my main machine doesn't have a physical network adapter,
+I decided to do this as a continuation on the Pi.
 
-The workaround here is to load a second micro SD card with Ubunto 22.something and fire it up in the Pi 400. This was quick and I did some configuration before going to  
+The workaround here is to load a second micro SD card with Ubunto 22.something and fire it up in the Pi 400. This was quick and I did some configuration before going to the RISC OS for finalizing the connection. 
+Plugging both ethernet and power-over-USB into the Pi, I logged into http://vonets.cfg with "admin:admin" and proceeded to witness all of my 
+neighbors' router's MACs in plain text... plus their decibel signal strength, gooood ole chinese radio devices eh?
+
+I have a strong desire to physically dismantly this device and connect it to my microchip PLC programming board somehow and see just how this 
+thing tics. After the nerve racking step of hand jamming my 2.4G password into an http Chinese website (awesome) I rebooted the VAP and waited 
+for the progress window to give me the green light... this takes a while. Going to bed, will continue...
 
 
 
