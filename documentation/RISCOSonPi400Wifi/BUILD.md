@@ -22,6 +22,10 @@ someone in the past 35 years has to have solved this for us...
 Introducing the ethernet-to-usb-bridge. Vonets VAP11N300 was $25USD on Amazon and covers us with 2.4GHz wifi which is enough for us in this case.
 There's also the Vonets VAP11AC which is dual band and a possible extension for future use when I delve into hardening the security on this thing.
 
+To configure the Vonets VAP11N300, I needed to do so on the Vonets official website; what I didn't want to do was enter my home internet router's 
+password and SSID into a Chinese http website... If the implication isn't clear, I can't help you.
+
+The workaround here is to load a second micro SD card with Ubunto 22.something and fire it up in the Pi 400. This was quick and I did some configuration before going to  
 
 
 
