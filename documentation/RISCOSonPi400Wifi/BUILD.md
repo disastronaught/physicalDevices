@@ -33,6 +33,10 @@ I have a strong desire to physically dismantly this device and connect it to my 
 thing tics. After the nerve racking step of hand jamming my 2.4G password into an http Chinese website (awesome) I rebooted the VAP and waited 
 for the progress window to give me the green light... this takes a while. Going to bed, will continue...
 
+As one can imagine, there needs to be some driver-like package loaded to this for it to be compatible with RISC OS. 
+If we were using say, a brostrend 2.4G wifi adapter and wanted to configure it on a Windows machine, for use on a Linux machine,
+easy peasy lemon squeazy, plug in here, load there, now we're sniffing networks... with RISC it's a little different. 
+Luckily 
 
 
 
