@@ -36,7 +36,7 @@ for the progress window to give me the green light... this takes a while. Going 
 As one can imagine, there needs to be some driver-like package loaded to this for it to be compatible with RISC OS. 
 If we were using say, a brostrend 2.4G wifi adapter and wanted to configure it on a Windows machine, for use on a Linux machine,
 easy peasy lemon squeazy, plug in here, load there, now we're sniffing networks... with RISC it's a little different. 
-Luckily 
+Luckily there's a package for this at heyrick.ddns.net/files/vonets_pre001.zip
 
 
 
