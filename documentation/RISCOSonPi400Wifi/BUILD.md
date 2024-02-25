@@ -38,6 +38,7 @@ If we were using say, a brostrend 2.4G wifi adapter and wanted to configure it o
 easy peasy lemon squeazy, plug in here, load there, now we're sniffing networks... with RISC it's a little different. 
 Luckily there's a package for this at heyrick.ddns.net/files/vonets_pre001.zip and once we load that to a USB drive we can run it on RISC OS
 
+Ok, so it's time to configure this before my cardputer shows up in the mail.
 
 
 
