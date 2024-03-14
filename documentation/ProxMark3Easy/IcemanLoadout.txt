@@ -9,7 +9,7 @@ For the startup and trial uses, I'm borrowing methodology from DangerousThings.c
 He does an excellent unboxing and full startup tutorial here: https://www.youtube.com/watch?v=o6WOTM4D970
 Also if you're a text based learner (like me) he has a 10 page or so writeup here: https://dngr.us/pm3-guide
 All tests done with this device as recorded here are for educational purposes.
-All physical penetration testing and security audits performed with this device are under Master Service Agreements
+All physical penetration testing and security audits performed with this device are under Master Service Agreements 
 and their nature/success is covered by Non Disclosure Agreements.
 Please use this knowledge legally. I am not responsible for illegal use of near field communication devices
 developed with the techniques listed here. Sniff responsibly.
