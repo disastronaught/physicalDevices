@@ -40,6 +40,8 @@ Luckily there's a package for this at heyrick.ddns.net/files/vonets_pre001.zip a
 
 Ok, so it's time to configure this before my cardputer shows up in the mail. 
 
+Vonets website is down today, so I can't configure the bridged adapter
+
 
 
 
